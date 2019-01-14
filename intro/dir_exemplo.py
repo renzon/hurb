@@ -25,7 +25,7 @@ print(f'Id da Bia: {id(bia)}')
 bia.imprimir_dados()
 
 if renzo.nome == None and renzo.cpf == None:
-    print('faltando nome e cpf')
+    print('faltando nome elemento cpf')
 elif renzo.cpf == None:
     print('faltando cpf')
 elif renzo.nome == None:
