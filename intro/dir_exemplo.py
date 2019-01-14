@@ -31,4 +31,4 @@ elif renzo.cpf == None:
 elif renzo.nome == None:
     print('faltando nome')
 else:
-    print('Form ok')
+    print('Form ok!')
