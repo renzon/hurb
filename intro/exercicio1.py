@@ -1,8 +1,8 @@
-import string
+from itertools import cycle
+from string import ascii_lowercase as minusculas
 
-letras = string.ascii_lowercase
 numeros = range(1, 30)
+letras_ciclo = cycle(minusculas)
 
-for i, n in enumerate(numeros):
-    i = i % len(letras)
-    print(letras[i], n, sep=' - ')
+for letra, numero in zip(letras_ciclo, numeros):
+    print(letra, numero, sep=' - ')
