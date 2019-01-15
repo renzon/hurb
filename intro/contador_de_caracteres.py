@@ -5,9 +5,20 @@
 {'renzo': 2}
 >>> contar_palavras('renzo renzo nuccitelli')
 {'renzo': 2, 'nuccitelli': 1}
+>>> contar_palavras('renzo renzo nuccitelli santos')
+{'renzo': 2, 'nuccitelli': 1, 'santos': 1}
+>>> contar_palavras('renzo renzo nuccitelli santos santos')
+{'renzo': 2, 'nuccitelli': 1, 'santos': 2}
 '''
 
 
 def contar_palavras(texto):
-    pass
+    frequencias = {}
+    palavras = texto.split()
+    for word in palavras:
+        if word in frequencias:
+            frequencias[word] += 1
+        else:
+            frequencias[word] = 1
 
+    return frequencias
