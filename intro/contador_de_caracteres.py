@@ -16,9 +16,6 @@ def contar_palavras(texto):
     frequencias = {}
     palavras = texto.split()
     for word in palavras:
-        if word in frequencias:
-            frequencias[word] += 1
-        else:
-            frequencias[word] = 1
+        frequencias[word] = frequencias.get(word, 0) + 1
 
     return frequencias
