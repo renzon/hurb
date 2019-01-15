@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+bid.csv
+bidar-utf8.csv
+saida.csv
