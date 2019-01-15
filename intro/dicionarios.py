@@ -13,10 +13,25 @@ linguas['es'] = 'Espanhol'
 print(linguas.get('es', 'Lingua não disponível'))
 print(linguas.get('pt-br', 'Lingua não disponível'))
 
-sku_dicionario={
-    'omn-2255': ['989354', '7565'],
-    'omn-2256': ['989355', '7566'],
+sku_dicionario = {
+    'omn-2255':
+        {
+            'sku': '989354',
+            'estabelecimento': '7565'
+        },
+    'omn-2256':
+        {
+            'sku': '989355',
+            'estabelecimento': '7566'
+        },
 }
+ids_dicionario = sku_dicionario['omn-2255']
 
-lista_ids = sku_dicionario['omn-2255']
-print(lista_ids[1])
+
+# Acesso id do sku com método get
+print(ids_dicionario.get('sku'))
+print(sku_dicionario.get('omn-2255').get('sku'))
+
+# Acesso id do estabelecimento com colchetes
+print(ids_dicionario['estabelecimento'])
+print(sku_dicionario['omn-2255']['estabelecimento'])
