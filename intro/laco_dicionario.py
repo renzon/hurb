@@ -16,3 +16,7 @@ print(list(linguas.keys()))
 # Iteraçao pelos valores
 for valor in linguas.values():
     print(valor)
+
+# Iteraçao pelos items
+for chave, valor in linguas.items():
+    print(chave, valor)
