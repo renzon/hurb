@@ -19,6 +19,9 @@ with open('bid.csv', mode='r', newline='', encoding='utf-8') as csvfile:
             sku = linha_dct['PartnerRef']
             hoteis_com_roi_negativo.append((roi, hotel, cpc, round(cpc * 0.8), sku))
     hoteis_com_roi_negativo.sort()
-    print(hoteis_com_roi_negativo)
-    for roi_e_hotel in hoteis_com_roi_negativo:
-        print(roi_e_hotel)
+    with open('saida.csv', 'w', newline='') as saida_csv:
+        spamwriter = csv.writer(saida_csv, delimiter=';',
+                                quotechar='|', quoting=csv.QUOTE_MINIMAL)
+        for hotel in hoteis_com_roi_negativo:
+            linha = hotel[-2:]
+            spamwriter.writerow(linha)
