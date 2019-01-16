@@ -1,10 +1,10 @@
-entrada = open('bid.csv', mode='r', encoding='Windows-1252')
+entrada = open('bid.csv', mode='r', encoding='utf-8')
 saida = open('saida.csv', mode='w')
 
 for linha in entrada:
-    colunas = linha.split(';')
-    nova_linha = f'{colunas[0]};{colunas[1]}'
-    saida.write(nova_linha+'\n')
+    linha=linha.replace('|', ';')
+
+    saida.write(linha)
 
 entrada.close()
 saida.close()
