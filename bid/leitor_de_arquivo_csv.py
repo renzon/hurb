@@ -22,7 +22,10 @@ def processar_novo_bid():
             if 0 < roi < 1:
                 cpc = int(linha_dct['Bid 09/01'])
                 sku = linha_dct['PartnerRef']
-                novo_cpc = calcular_novo_cpc(cpc)
+                qtd_pedidos = linha_dct['SumQtdPedidos']
+                soma_faturamento = linha_dct[' SumFaturamentoTopline ']
+                custo = linha_dct['Custo']
+                novo_cpc = calcular_novo_cpc_para_roi_negativo(roi, cpc, qtd_pedidos,soma_faturamento, custo)
                 hoteis_com_roi_negativo.append((roi, hotel, cpc, novo_cpc, sku))
         hoteis_com_roi_negativo.sort()
         with open('saida.csv', 'w', newline='') as saida_csv:
@@ -32,7 +35,8 @@ def processar_novo_bid():
                 spamwriter.writerow(linha)
 
 
-def calcular_novo_cpc(cpc_parametro):
+def calcular_novo_cpc_para_roi_negativo(roi, cpc_parametro, qtd_pedidos,soma_faturamento, custo):
     return round(cpc_parametro * 0.8)
+
 
 processar_novo_bid()
