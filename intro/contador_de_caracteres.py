@@ -1,5 +1,5 @@
 '''
->>> contar_palavras(linha)
+>>> contar_palavras(linha_dct)
 {'renzo': 1}
 >>> contar_palavras('renzo renzo')
 {'renzo': 2}
