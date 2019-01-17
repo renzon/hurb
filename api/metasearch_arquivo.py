@@ -18,4 +18,6 @@ for pacote in pacotes:
     else:
         desconto_porcentagem = 0
     pacote['promo'] = f'{desconto_porcentagem:.2%}'
-    print(pacote['name'], pacote['promo'], sep=':')
+
+with open('saida.json', 'w', encoding='utf-8') as saida:
+    json.dump(pacotes, saida)
