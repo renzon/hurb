@@ -29,7 +29,7 @@ def processar_novo_bid():
                 hoteis_com_roi_negativo.append((roi, hotel, cpc, novo_cpc, sku))
         hoteis_com_roi_negativo.sort()
         with open('saida.csv', 'w', newline='') as saida_csv:
-            spamwriter = csv.writer(saida_csv, delimiter=';', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+            spamwriter = csv.DictWriter(saida_csv, delimiter=';', quotechar='|', quoting=csv.QUOTE_MINIMAL)
             for hotel in hoteis_com_roi_negativo:
                 linha = hotel[-2:]
                 spamwriter.writerow(linha)
