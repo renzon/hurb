@@ -12,3 +12,12 @@ print('Acabou o programa')
 parametros = [4, 2]
 
 print(dividir(*parametros))
+
+import string
+
+dct = {}
+
+for i, c in enumerate(string.ascii_uppercase):
+    dct[c] = 2 + i//3
+
+print(dct)
