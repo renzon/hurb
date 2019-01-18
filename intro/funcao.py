@@ -8,3 +8,7 @@ print(dividir(3, 2))
 print(dividir(4, 0))
 print(dividir(denominador=9, x=4))
 print('Acabou o programa')
+
+parametros = [4, 2]
+
+print(dividir(*parametros))
